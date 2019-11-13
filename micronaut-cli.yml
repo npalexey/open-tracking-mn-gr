@@ -1,0 +1,5 @@
+profile: service
+defaultPackage: com.qlearsite.eng.opentracking
+---
+testFramework: junit
+sourceLanguage: java

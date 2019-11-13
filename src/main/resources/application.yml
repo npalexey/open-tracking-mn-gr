@@ -1,0 +1,31 @@
+micronaut:
+  application:
+    name: open-tracking-mn-gr
+    jackson:
+      deserialization.fail-on-unknown-properties: true
+    messages:
+      basename: messages
+      use-code-as-default-message: true
+  server:
+    port: 9778
+    use-forward-headers: true
+    servlet.contextPath: /v1
+dev.mode: false
+module:
+  api-version: v1
+  id: open-tracking
+  security:
+    debug:
+      enabled: true
+    public-key-path: /home/npalexey/workenv/IdeaProjects/Qlearsite/keys/public.pem
+  notification:
+    rabbitmq:
+      host: localhost
+      port: 5672
+      username: rabbit
+      password: rabbit
+      exchange:
+        name: opened-mail-id
+        type: fanout
+        durable: true
+        auto-delete: false
